@@ -1,0 +1,26 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UsePythonVersion@0
+  displayName: 'Use Python 3.7'
+  inputs:
+    versionSpec: '3.7'
+
+- script:  |
+    python -m pip install --upgrade pip
+    python -m pip install mkdocs
+    mkdocs build -t readthedocs
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerHub'
+    repository: manuelcaub/mknet
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    buildContext: './src'
+    tags: |
+      1.0.$(Build.BuildId)

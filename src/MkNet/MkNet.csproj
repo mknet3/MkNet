@@ -16,6 +16,9 @@
 
   <ItemGroup>
     <Folder Include="docs\" />
+    <None Update="docs\**\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
