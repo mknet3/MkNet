@@ -24,3 +24,5 @@ steps:
     buildContext: './src'
     tags: |
       1.0.$(Build.BuildId)
+      1.0
+      latest
