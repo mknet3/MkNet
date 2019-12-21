@@ -15,7 +15,7 @@ docker run -p 5001:80 --env AzureAd__TenantId=YourTenantId --env AzureAd__Client
 
 ## Repository
 
-* [mcanete/mknet](https://hub.docker.com/r/manuelcaub/mknet)
+* [mcanete/mknet](https://hub.docker.com/r/mcanete/mknet)
 
 ## Test it with docker
 
