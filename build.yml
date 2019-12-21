@@ -18,7 +18,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'DockerHub'
-    repository: manuelcaub/mknet
+    repository: mcanete/mknet
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     buildContext: './src'
